@@ -11,18 +11,15 @@ public class CreditCalculator {
     }
 
     public int paymentCalculator() {
-
-
-        return 0;
+        double payment = rate / 100 / 12;
+        return (int) (credit * (payment + (payment / ((Math.pow((1 + payment), time) - 1)))));
     }
 
     public int refundAmount(int payment) {
-
-        return payment;
+        return time * payment;
     }
 
     public int overpaymentCalc(int sum) {
-
-        return sum;
+        return sum - credit;
     }
 }
